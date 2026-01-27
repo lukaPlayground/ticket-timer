@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>티켓팅 타이머</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🎫 티켓팅 타이머</h1>
+    
+    <!-- 서버 시간 표시 -->
+    <div class="time-sync">
+      <div class="label">표준시 (KST)</div>
+      <div class="server-time" id="serverTime">--:--:--</div>
+      <div class="time-offset" id="timeOffset">오차 계산 중...</div>
+    </div>
+
+    <!-- 현재 탭 정보 -->
+    <div class="current-tab">
+      <h3>현재 탭</h3>
+      <div class="tab-info" id="currentTabInfo">
+        <div class="tab-title" id="tabTitle">--</div>
+        <div class="tab-url" id="tabUrl">--</div>
+      </div>
+    </div>
+
+    <!-- 타이머 설정 -->
+    <div class="timer-setting">
+      <h3>티켓 오픈 시각 설정</h3>
+      <div class="form-group">
+        <label for="concertName">공연명</label>
+        <input type="text" id="concertName" placeholder="예: 아이유 콘서트">
+      </div>
+      <div class="form-group">
+        <label for="openDate">날짜</label>
+        <input type="date" id="openDate">
+      </div>
+      <div class="form-group">
+        <label for="openTime">시각</label>
+        <input type="time" id="openTime" step="1">
+      </div>
+      <div class="form-group checkbox">
+        <label>
+          <input type="checkbox" id="autoRefresh">
+          정각에 자동 새로고침
+        </label>
+      </div>
+      <button id="saveTimer" class="btn-primary">이 탭에 타이머 설정</button>
+    </div>
+
+    <!-- 저장된 타이머 목록 -->
+    <div class="timer-list">
+      <h3>설정된 타이머</h3>
+      <div id="timerListContainer">
+        <div class="empty-state">설정된 타이머가 없습니다</div>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
