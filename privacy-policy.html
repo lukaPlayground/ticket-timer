@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>티켓팅 타이머 - 개인정보처리방침</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #667eea;
+      margin-bottom: 10px;
+      font-size: 28px;
+    }
+    h2 {
+      color: #555;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      font-size: 20px;
+      border-bottom: 2px solid #667eea;
+      padding-bottom: 5px;
+    }
+    p {
+      margin-bottom: 15px;
+    }
+    ul {
+      margin-left: 20px;
+      margin-bottom: 15px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    .date {
+      color: #999;
+      font-size: 14px;
+      margin-bottom: 30px;
+    }
+    .language-toggle {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .language-toggle button {
+      padding: 8px 20px;
+      margin: 0 5px;
+      border: 2px solid #667eea;
+      background: white;
+      color: #667eea;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.3s;
+    }
+    .language-toggle button.active {
+      background: #667eea;
+      color: white;
+    }
+    .language-toggle button:hover {
+      background: #667eea;
+      color: white;
+    }
+    .content {
+      display: none;
+    }
+    .content.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎫 티켓팅 타이머</h1>
+    <div class="language-toggle">
+      <button onclick="showLanguage('ko')" id="btn-ko" class="active">한국어</button>
+      <button onclick="showLanguage('en')" id="btn-en">English</button>
+    </div>
+
+    <!-- 한국어 버전 -->
+    <div id="content-ko" class="content active">
+      <h2>개인정보처리방침</h2>
+      <p class="date">최종 수정일: 2025년 1월 28일</p>
+
+      <h2>1. 개요</h2>
+      <p>티켓팅 타이머("본 확장 프로그램")는 사용자의 개인정보 보호를 최우선으로 생각합니다. 본 개인정보처리방침은 본 확장 프로그램이 어떤 정보를 수집하고 사용하는지 설명합니다.</p>
+
+      <h2>2. 수집하는 정보</h2>
+      <p>본 확장 프로그램은 다음과 같은 정보만 로컬(사용자의 브라우저)에 저장합니다:</p>
+      <ul>
+        <li>사용자가 설정한 타이머 정보 (공연명, 오픈 시각)</li>
+        <li>타이머가 설정된 탭의 제목과 URL</li>
+        <li>자동 새로고침 설정 여부</li>
+      </ul>
+
+      <h2>3. 정보의 저장 및 사용</h2>
+      <ul>
+        <li>모든 데이터는 Chrome의 로컬 스토리지에만 저장됩니다</li>
+        <li>어떠한 개인정보도 외부 서버로 전송되지 않습니다</li>
+        <li>수집된 정보는 오직 타이머 기능 제공 목적으로만 사용됩니다</li>
+        <li>제3자와 정보를 공유하지 않습니다</li>
+      </ul>
+
+      <h2>4. 외부 서비스 사용</h2>
+      <p>본 확장 프로그램은 정확한 시간 동기화를 위해 다음 공개 API를 사용합니다:</p>
+      <ul>
+        <li>Google (www.google.com) - HTTP 헤더에서 서버 시간 확인</li>
+        <li>Cloudflare (cloudflare.com) - 시간 동기화 API</li>
+      </ul>
+      <p>이러한 요청은 시간 정보만 가져오며, 개인정보를 전송하지 않습니다.</p>
+
+      <h2>5. 권한 사용</h2>
+      <p>본 확장 프로그램이 요청하는 권한과 그 사용 목적:</p>
+      <ul>
+        <li><strong>storage:</strong> 타이머 설정을 로컬에 저장하기 위함</li>
+        <li><strong>alarms:</strong> 설정된 시각에 알림을 제공하기 위함</li>
+        <li><strong>notifications:</strong> 티켓팅 시각 알림을 표시하기 위함</li>
+        <li><strong>tabs:</strong> 타이머가 설정된 탭 정보를 확인하기 위함</li>
+        <li><strong>host_permissions:</strong> 시간 동기화 API 접근을 위함</li>
+      </ul>
+
+      <h2>6. 데이터 삭제</h2>
+      <p>사용자는 언제든지 다음 방법으로 저장된 데이터를 삭제할 수 있습니다:</p>
+      <ul>
+        <li>확장 프로그램 내에서 각 타이머를 개별 삭제</li>
+        <li>Chrome 확장 프로그램 제거 (모든 데이터 자동 삭제)</li>
+        <li>Chrome 설정 &gt; 개인정보 및 보안 &gt; 인터넷 사용 기록 삭제</li>
+      </ul>
+
+      <h2>7. 보안</h2>
+      <p>본 확장 프로그램은 사용자 데이터를 안전하게 보호하기 위해 최선을 다합니다. 모든 데이터는 로컬에만 저장되며, 암호화된 HTTPS 연결만 사용합니다.</p>
+
+      <h2>8. 어린이 개인정보</h2>
+      <p>본 확장 프로그램은 의도적으로 만 13세 미만 어린이의 개인정보를 수집하지 않습니다.</p>
+
+      <h2>9. 개인정보처리방침 변경</h2>
+      <p>본 개인정보처리방침은 필요에 따라 업데이트될 수 있습니다. 중요한 변경 사항이 있을 경우 확장 프로그램을 통해 공지하겠습니다.</p>
+
+      <h2>10. 문의</h2>
+      <p>본 개인정보처리방침에 대한 질문이나 우려사항이 있으시면 Chrome Web Store의 지원 섹션을 통해 연락해 주시기 바랍니다.</p>
+    </div>
+
+    <!-- English Version -->
+    <div id="content-en" class="content">
+      <h2>Privacy Policy</h2>
+      <p class="date">Last Updated: January 28, 2025</p>
+
+      <h2>1. Overview</h2>
+      <p>Ticketing Timer ("this Extension") prioritizes user privacy. This Privacy Policy explains what information is collected and how it is used.</p>
+
+      <h2>2. Information We Collect</h2>
+      <p>This Extension only stores the following information locally in your browser:</p>
+      <ul>
+        <li>Timer settings you configure (event name, opening time)</li>
+        <li>Title and URL of tabs where timers are set</li>
+        <li>Auto-refresh preferences</li>
+      </ul>
+
+      <h2>3. Data Storage and Use</h2>
+      <ul>
+        <li>All data is stored only in Chrome's local storage</li>
+        <li>No personal information is transmitted to external servers</li>
+        <li>Collected information is used solely for providing timer functionality</li>
+        <li>We do not share information with third parties</li>
+      </ul>
+
+      <h2>4. External Services</h2>
+      <p>This Extension uses the following public APIs for accurate time synchronization:</p>
+      <ul>
+        <li>Google (www.google.com) - Server time from HTTP headers</li>
+        <li>Cloudflare (cloudflare.com) - Time synchronization API</li>
+      </ul>
+      <p>These requests only retrieve time information and do not transmit personal data.</p>
+
+      <h2>5. Permissions Usage</h2>
+      <p>Permissions requested by this Extension and their purposes:</p>
+      <ul>
+        <li><strong>storage:</strong> To save timer settings locally</li>
+        <li><strong>alarms:</strong> To provide notifications at set times</li>
+        <li><strong>notifications:</strong> To display ticketing time alerts</li>
+        <li><strong>tabs:</strong> To identify tabs where timers are set</li>
+        <li><strong>host_permissions:</strong> To access time synchronization APIs</li>
+      </ul>
+
+      <h2>6. Data Deletion</h2>
+      <p>Users can delete stored data at any time by:</p>
+      <ul>
+        <li>Deleting individual timers within the Extension</li>
+        <li>Removing the Extension (automatically deletes all data)</li>
+        <li>Chrome Settings &gt; Privacy and security &gt; Clear browsing data</li>
+      </ul>
+
+      <h2>7. Security</h2>
+      <p>This Extension strives to protect user data securely. All data is stored locally only, and uses encrypted HTTPS connections exclusively.</p>
+
+      <h2>8. Children's Privacy</h2>
+      <p>This Extension does not intentionally collect personal information from children under 13 years of age.</p>
+
+      <h2>9. Privacy Policy Changes</h2>
+      <p>This Privacy Policy may be updated as necessary. Significant changes will be announced through the Extension.</p>
+
+      <h2>10. Contact</h2>
+      <p>If you have questions or concerns about this Privacy Policy, please contact us through the Chrome Web Store support section.</p>
+    </div>
+  </div>
+
+  <script>
+    function showLanguage(lang) {
+      // 모든 content 숨기기
+      document.querySelectorAll('.content').forEach(el => {
+        el.classList.remove('active');
+      });
+      
+      // 모든 버튼 비활성화
+      document.querySelectorAll('.language-toggle button').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      
+      // 선택된 언어 표시
+      document.getElementById('content-' + lang).classList.add('active');
+      document.getElementById('btn-' + lang).classList.add('active');
+    }
+  </script>
+</body>
+</html>
